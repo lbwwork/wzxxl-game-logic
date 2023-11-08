@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxxl.gamelogic.mapper.MonsterMapper">
+
+    <resultMap id="BaseResultMap" type="com.wzxxl.gamelogic.domain.Monster">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="monsterName" column="monster_name" jdbcType="VARCHAR"/>
+            <result property="race" column="race" jdbcType="VARCHAR"/>
+            <result property="gradeCode" column="grade_code" jdbcType="VARCHAR"/>
+            <result property="gradeName" column="grade_name" jdbcType="VARCHAR"/>
+            <result property="hp" column="hp" jdbcType="BIGINT"/>
+            <result property="mp" column="mp" jdbcType="BIGINT"/>
+            <result property="attack" column="attack" jdbcType="BIGINT"/>
+            <result property="defense" column="defense" jdbcType="BIGINT"/>
+            <result property="criticalHit" column="critical_hit" jdbcType="DECIMAL"/>
+            <result property="magicAttack" column="magic_attack" jdbcType="BIGINT"/>
+            <result property="jobCode" column="job_code" jdbcType="VARCHAR"/>
+            <result property="jobName" column="job_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,monster_name,race,
+        grade_code,grade_name,hp,
+        mp,attack,defense,
+        critical_hit,magic_attack,job_code,
+        job_name
+    </sql>
+    <insert id="insert">
+        insert into
+        monster(<include refid="Base_Column_List"></include>)
+        values (#{monster.id}, #{monster.monsterName}, #{monster.race}, #{monster.gradeCode}, #{monster.gradeName}
+        , #{monster.hp}, #{monster.mp}, #{monster.attack}, #{monster.defense}, #{monster.criticalHit}, #{monster.magicAttack}
+        , #{monster.jobCode}, #{monster.jobName})
+    </insert>
+</mapper>

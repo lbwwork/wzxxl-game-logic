@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzxxl.gamelogic.mapper.PlayerAttributesMapper">
+
+    <resultMap id="BaseResultMap" type="com.wzxxl.gamelogic.domain.PlayerAttributes">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="accountId" column="account_id" jdbcType="BIGINT"/>
+            <result property="nickname" column="nickname" jdbcType="VARCHAR"/>
+            <result property="attack" column="attack" jdbcType="BIGINT"/>
+            <result property="defense" column="defense" jdbcType="BIGINT"/>
+            <result property="criticalHit" column="critical_hit" jdbcType="DECIMAL"/>
+            <result property="vampire" column="vampire" jdbcType="DECIMAL"/>
+            <result property="hp" column="hp" jdbcType="BIGINT"/>
+            <result property="mp" column="mp" jdbcType="BIGINT"/>
+            <result property="magicAttack" column="magic_attack" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,account_id,nickname,
+        attack,defense,critical_hit,
+        vampire,hp,mp,
+        magic_attack
+    </sql>
+</mapper>
