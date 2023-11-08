@@ -21,6 +21,23 @@
         id,account_id,nickname,
         attack,defense,critical_hit,
         vampire,hp,mp,
-        magic_attack
+        magic_attack,create_time
     </sql>
+    <insert id="insert">
+        insert into
+            player_attributes(<include refid="Base_Column_List"></include>)
+        values (
+                #{playerAttributes.id}
+                ,#{playerAttributes.accountId}
+                ,#{playerAttributes.nickname}
+                ,#{playerAttributes.attack}
+                ,#{playerAttributes.defense}
+                ,#{playerAttributes.criticalHit}
+                ,#{playerAttributes.vampire}
+                ,#{playerAttributes.hp}
+                ,#{playerAttributes.mp}
+                ,#{playerAttributes.magicAttack}
+                ,#{playerAttributes.createTime}
+        )
+    </insert>
 </mapper>

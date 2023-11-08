@@ -1,6 +1,8 @@
 package com.wzxxl.gamelogic.mapper;
 
+import com.wzxxl.gamelogic.domain.PlayerAttributes;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
 * @author libaowen
@@ -11,6 +13,11 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface PlayerAttributesMapper {
 
+    /**
+     * 新增玩家属性
+     * @param playerAttributes
+     */
+    void insert(@Param("playerAttributes") PlayerAttributes playerAttributes);
 }
 
 

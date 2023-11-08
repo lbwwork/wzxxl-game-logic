@@ -1,6 +1,7 @@
 package com.wzxxl.gamelogic.service;
 
-import com.wzxxl.gamelogic.domain.PlayerAttributes;
+import com.wzxxl.common.result.Response;
+import com.wzxxl.gamelogic.dto.PlayerAttributesDTO;
 
 /**
 * @author libaowen
@@ -9,4 +10,10 @@ import com.wzxxl.gamelogic.domain.PlayerAttributes;
 */
 public interface PlayerAttributesService {
 
+    /**
+     * 保存玩家属性
+     * @param playerAttributesDTO
+     * @return
+     */
+    Response<Long> savePlayer(PlayerAttributesDTO playerAttributesDTO);
 }

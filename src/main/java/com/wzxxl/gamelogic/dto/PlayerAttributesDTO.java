@@ -1,30 +1,31 @@
 package com.wzxxl.gamelogic.dto;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
 * 玩家属性
 * @TableName player_attributes
 */
+@Data
 public class PlayerAttributesDTO implements Serializable {
 
     /**
     * id
     */
-    @NotNull(message="[id]不能为空")
     @ApiModelProperty("id")
     private Long id;
     /**
     * 用户id
     */
-    @NotNull(message="[用户id]不能为空")
     @ApiModelProperty("用户id")
     private Long accountId;
     /**
@@ -49,12 +50,12 @@ public class PlayerAttributesDTO implements Serializable {
     * 暴击（百分比）
     */
     @ApiModelProperty("暴击（百分比）")
-    private Integer criticalHit;
+    private BigDecimal criticalHit;
     /**
     * 吸血
     */
     @ApiModelProperty("吸血")
-    private Integer vampire;
+    private BigDecimal vampire;
     /**
     * 生命值
     */
